@@ -81,7 +81,13 @@ const Home: React.FC = () => {
     const handleShowCaseTypes = async (cat_id: number) => {
         const response = await fetch('./src/data/categories.json');
         const data = await response.json();
-        const found = data.categories.find((cat: Category) => cat.id == Number(cat_id));
+
+        // const found = data.categories.find((cat: Category) => cat.id === Number(cat_id));
+
+        // because we don't have available case types for the other
+        // categories yet, let's hardcode the value of cat_id for now
+        const found = data.categories.find((cat: Category) => cat.id === 1 );
+
         setCaseTypes(found.casetypes || null);
 
         setShowCaseTypes(true);

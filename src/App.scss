@@ -604,6 +604,10 @@ footer {
     h1 {
       font-size: 1.625rem;
     }
+
+    .categories {
+      width: 100%;
+    }
   }
 }
 
@@ -763,6 +767,12 @@ footer {
 
     h4 {
       font-size: 0.9rem;
+    }
+
+    .categories {
+      li {
+        padding: 4px 15px;
+      }
     }
   }
 }
