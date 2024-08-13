@@ -307,7 +307,7 @@ const Home: React.FC = () => {
                                 />
                             </div>
                             {
-                                showLocations && (
+                                showLocations && searchTerm && (
                                     <div className="locations">
                                         {
                                             filteredData.length > 0 ? (
