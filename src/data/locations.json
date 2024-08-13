@@ -1,0 +1,97 @@
+{
+    "locations": [
+        {
+            "zip": "33901",
+            "city": "Fort Myers, FL"
+            
+        },
+        {
+            "zip": "85032",
+            "city": "Phoenix, AZ"
+        },
+        {
+            "zip": "85710",
+            "city": "Tucson, AZ"
+        },
+        {
+            "zip": "72204",
+            "city": "Little Rock, AR"
+        },
+        {
+            "zip": "08002",
+            "city": "Cherry Hill, NJ"
+        },
+        {
+            "zip": "75001",
+            "city": "Dallas, TX"
+        },
+        {
+            "zip": "90011",
+            "city": "Los Angeles, CA"
+        },
+        {
+            "zip": "92154",
+            "city": "San Diego, CA"
+        },
+        {
+            "zip": "80219",
+            "city": "Denver, CO"
+        },
+        {
+            "zip": "33186",
+            "city": "Miami, FL"
+        },
+        {
+            "zip": "32828",
+            "city": "Orlando, FL"
+        },
+        {
+            "zip": "30318",
+            "city": "Atlanta, GA"
+        },
+        {
+            "zip": "96815",
+            "city": "Honolulu, HI"
+        },
+        {
+            "zip": "60629",
+            "city": "Chicago, IL"
+        },
+        {
+            "zip": "21215",
+            "city": "Baltimore, MD"
+        },
+        {
+            "zip": "07102",
+            "city": "Newark, NJ"
+        },
+        {
+            "zip": "07201",
+            "city": "Elizabeth, NJ"
+        },
+        {
+            "zip": "89103",
+            "city": "Las Vegas, NV"
+        },
+        {
+            "zip": "87505",
+            "city": "Santa Fe, NM"
+        },
+        {
+            "zip": "10019",
+            "city": "New York City, NY"
+        },
+        {
+            "zip": "14201",
+            "city": "Buffalo, NY"
+        },
+        {
+            "zip": "28202",
+            "city": "Charlotte, NC"
+        },
+        {
+            "zip": "43215",
+            "city": "Columbus, OH"
+        }
+    ]
+}

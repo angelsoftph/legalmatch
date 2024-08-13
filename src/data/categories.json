@@ -1,0 +1,86 @@
+{
+    "categories": [
+        {
+            "id": 1,
+            "name": "Family",
+            "casetypes": [
+                {
+                    "id": 1,
+                    "name": "Adoption"
+                },
+                {
+                    "id": 2,
+                    "name": "Guardianship"
+                },
+                {
+                    "id": 3,
+                    "name": "Child Custody and Visitation"
+                },
+                {
+                    "id": 4,
+                    "name": "Paternity"
+                },
+                {
+                    "id": 5,
+                    "name": "Child Support"
+                },
+                {
+                    "id": 6,
+                    "name": "Separation"
+                },
+                {
+                    "id": 7,
+                    "name": "Divorce"
+                },
+                {
+                    "id": 8,
+                    "name": "Spousal Support or Alimony"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Criminal Defense"
+        },
+        {
+            "id": 3,
+            "name": "Business"
+        },
+        {
+            "id": 4,
+            "name": "Personal Injury"
+        },
+        {
+            "id": 5,
+            "name": "Bankruptcy &amp; Finances"
+        },
+        {
+            "id": 6,
+            "name": "Products &amp; Services"
+        },
+        {
+            "id": 7,
+            "name": "Employment"
+        },
+        {
+            "id": 8,
+            "name": "Real Estate"
+        },
+        {
+            "id": 9,
+            "name": "Immigration"
+        },
+        {
+            "id": 10,
+            "name": "Wills, Trusts &amp; Estates"
+        },
+        {
+            "id": 11,
+            "name": "Government"
+        },
+        {
+            "id": 12,
+            "name": "Intellectual Property"
+        }
+    ]
+}

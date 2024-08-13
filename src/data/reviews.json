@@ -1,0 +1,28 @@
+{
+    "reviews": [
+        {
+            "id": 1,
+            "name": "Mitchell M.",
+            "category": "Family Law",
+            "location": "Cherry Hill, NJ",
+            "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pellentesque sem eu massa egestas consequat id in justo. Fusce massa sapien, interdum",
+            "rating": "5"
+        },
+        {
+            "id": 2,
+            "name": "Joel C.",
+            "category": "Job & Employment Law",
+            "location": "Little Rock, AR",
+            "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pellentesque sem eu massa egestas consequat id in justo. Fusce massa sapien, interdum",
+            "rating": "5"
+        },
+        {
+            "id": 1,
+            "name": "Jenny K.",
+            "category": "Family Law",
+            "location": "Dallas, TX",
+            "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pellentesque sem eu massa egestas consequat id in justo. Fusce massa sapien, interdum",
+            "rating": "5"
+        }
+    ]
+}
