@@ -28,6 +28,8 @@ const Home: React.FC = () => {
     const [showCaseTypes, setShowCaseTypes] = useState(false);
     const [showClientReviews, setShowClientReviews] = useState(false);
     const [showLocations, setShowLocations] = useState(false);
+    const [showMoreCategories, setShowMoreCategories] = useState(false);
+    const [loading, setLoading] = useState(false);
     const [expand, setExpand] = useState(false);
     const divRef = useRef<HTMLDivElement>(null);
 
@@ -79,18 +81,26 @@ const Home: React.FC = () => {
     };
 
     const handleShowCaseTypes = async (cat_id: number) => {
-        const response = await fetch('./src/data/categories.json');
-        const data = await response.json();
-
-        // const found = data.categories.find((cat: Category) => cat.id === Number(cat_id));
-
-        // because we don't have available case types for the other
-        // categories yet, let's hardcode the value of cat_id for now
-        const found = data.categories.find((cat: Category) => cat.id === 1 );
-
-        setCaseTypes(found.casetypes || null);
-
+        setLoading(true);
         setShowCaseTypes(true);
+
+        try {
+            const response = await fetch('./src/data/categories.json');
+            const data = await response.json();
+
+            // const found = data.categories.find((cat: Category) => cat.id === Number(cat_id));
+
+            // because we don't have available case types for the other
+            // categories yet, let's hardcode the value of cat_id for now
+            const found = data.categories.find((cat: Category) => cat.id === 1 );
+
+            setCaseTypes(found.casetypes || null);
+            setLoading(false);
+        } catch (error) {
+            console.log('Error fetching case types:', error);
+        } finally {
+            setLoading(false);
+        }
     }
 
     const handleShowClientReviews = () => {
@@ -100,6 +110,10 @@ const Home: React.FC = () => {
     const handleSelectLocation = (location: string) => {
         setSearchTerm(location);
         setShowLocations(false);
+    }
+
+    const handleShowMoreCategories = () => {
+        setShowMoreCategories(true);
     }
 
     return (
@@ -113,20 +127,28 @@ const Home: React.FC = () => {
                                 <div className="step flex items-center justify-center">3</div>
                                 <div className="flex-1 pl-4"><p>Which <strong>Family Law</strong> issue(s) apply to your case?</p></div>
                             </div>
-                            <div className="grid grid-cols-1 600px:grid-cols-2 mx-2 mt-8 gap-5">
-                                {
-                                    caseTypes.map((type) => (
-                                        <div className="flex flex-row gap-4 items-center" key={type.id}>
-                                            <div><input type="checkbox" /></div>
-                                            <div className="casetype">{type.name}</div>
+                            {
+                                loading ? (
+                                    <div className="flex flex-row mt-10 items-center justify-center">Loading data...</div>
+                                ) : (
+                                    <>
+                                        <div className="grid grid-cols-1 600px:grid-cols-2 mx-2 mt-8 gap-5">
+                                            {
+                                                caseTypes.map((type) => (
+                                                    <div className="flex flex-row gap-4 items-center" key={type.id}>
+                                                        <div><input type="checkbox" /></div>
+                                                        <div className="casetype">{type.name}</div>
+                                                    </div>
+                                                ))
+                                            }
                                         </div>
-                                    ))
-                                }
-                            </div>
-                            <div className="close" onClick={() => setShowCaseTypes(false)}></div>
-                            <div className="flex flex-1 items-end justify-center">
-                                <button>FIND A LAWYER NOW</button>
-                            </div>
+                                        <div className="close" onClick={() => setShowCaseTypes(false)}></div>
+                                        <div className="flex flex-1 items-end justify-center">
+                                            <button>FIND A LAWYER NOW</button>
+                                        </div>
+                                    </>
+                                )
+                            }
                         </div>
                     </div>
                 )
@@ -283,6 +305,54 @@ const Home: React.FC = () => {
                     </div>
                 )
             }
+            {
+                showMoreCategories && (
+                    <div id="popup-categories">
+                        <div className="mask"></div>
+                        <div className="wrapper flex flex-col gap-1">
+                            <div>
+                                <h3>OTHER CATEGORIES</h3>
+                            </div>
+                            <div>
+                                <p>Choose the category that best fits your case</p>
+                            </div>
+                            <div className="flex flex-col mt-5 overflow-y-auto">
+                                <div className="grid grid-cols-2 gap-4 categories">
+                                    <div>Abuse (Child, Domestic, Sexual)</div>
+                                    <div>Agencies &amp; Administration</div>
+                                    <div>Automobile (DUI, Crimes, Speeding)</div>
+                                    <div>Automobiles (Accidents, Insurance)</div>
+                                    <div>Banking (Business, Consumer)</div>
+                                    <div>Bars &amp; Restaurants</div>
+                                    <div>Business Formation &amp; Dissolution</div>
+                                    <div>Children (Adoption, Custody, Support)</div>
+                                    <div>Class Actions (Bad Drugs, Products)</div>
+                                    <div>Commercial Law and Contracts</div>
+                                    <div>Commercial Real Estate</div>
+                                    <div>Constitutional Law</div>
+                                    <div>Construction (Disputes, Liens)</div>
+                                    <div>Category 1A</div>
+                                    <div>Category 1B</div>
+                                    <div>Category 1C</div>
+                                    <div>Abuse (Child, Domestic, Sexual)</div>
+                                    <div>Category 2A</div>
+                                    <div>Category 2B</div>
+                                    <div>Category 2C</div>
+                                    <div>Category 2D</div>
+                                    <div>Category 2E</div>
+                                    <div>Category 2F</div>
+                                    <div>Category 2G</div>
+                                    <div>Category 2H</div>
+                                    <div>Category 2I</div>
+                                    <div>Category 2J</div>
+                                </div>
+                            </div>
+                            <div className="close" onClick={() => setShowMoreCategories(false)}></div>
+                        </div>
+                    </div>
+                )
+            }
+
             <div id="top" className="flex 1200px:flex-row flex-col items-center justify-between">
                 <div className="flex flex-col md:flex-row gap-3 items-center md:items-end">
                     <div className="logo"></div>
@@ -348,7 +418,7 @@ const Home: React.FC = () => {
                                     </div>
                                 )
                             }
-                            <h4 className="flex mt-5 justify-center"><Link to="#">Can't find your category? Click here.</Link></h4>
+                            <h4 className="flex mt-5 justify-center">Can't find your category? <span className="dotted" onClick={handleShowMoreCategories}>Click here</span>.</h4>
                         </div>
                         <div id="reviews" className="w-full md:w-1/2">
                             <h4 className="mt-0 mb-7">Clients review LegalMatch lawyers</h4>
